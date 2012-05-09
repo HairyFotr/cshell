@@ -66,7 +66,7 @@ then
             f=".buffer"
         fi
 
-        for i in `seq 0 $cnt`;
+        for i in `seq 1 $cnt`;
         do
             sed -i "`cat .buffer | wc -l` d" $f
         done
