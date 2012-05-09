@@ -41,8 +41,6 @@ then
     out=$incl
     echo "Include directive"
 else
-    let cnt=cnt+1
-
     if [ "`echo $input | grep {`" != "" ]
     then
         let lvl=lvl+1
@@ -64,6 +62,7 @@ else
     fi
 fi
 
+let cnt=cnt+1
 echo "$input" >> $out
 
 if [ $lvl == 0 ]
