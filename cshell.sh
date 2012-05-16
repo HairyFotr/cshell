@@ -41,6 +41,7 @@ then
     out=$incl
     echo "Include directive"
 else
+    #todo ignore "{"
     if [ "`echo $input | grep {`" != "" ]
     then
         let lvl=lvl+1
@@ -63,10 +64,11 @@ else
 fi
 
 let cnt=cnt+1
-echo "$input" >> $out
+echo ${input/'printf("'/'printf("\n'} >> $out
 
 if [ $lvl == 0 ]
 then
+    #todo format code
     echo > .code.c
     cat $incl >> .code.c
     cat $func >> .code.c
