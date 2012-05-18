@@ -63,7 +63,7 @@ let cnt=cnt+1
 #echo -n ${input/'printf("'/'printf("\n'} >> $out
 
 space="  "
-for i in `seq 1 $lvl`; do space="space  "; done
+for i in `seq 1 $lvl`; do space="$space  "; done
 
 if [[ $input == *"printf"* ]]; then
     echo -n "$space"$input | sed 's/"\([^"]*\)"/"\1\\n"/g' >> $out
